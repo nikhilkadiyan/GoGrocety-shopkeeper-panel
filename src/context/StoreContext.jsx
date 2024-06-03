@@ -6,7 +6,7 @@ const StoreContextProvider = (props) => {
   const url = "https://gogrocery-backend.onrender.com";
 
   const [token, setToken] = useState("");
-  const [editForm, setEditForm] = useState(false);
+  const [editForm, setEditForm] = useState(null);
 
   const contextValue = {
     url,

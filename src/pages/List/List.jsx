@@ -41,6 +41,10 @@ const List = () => {
     }
   };
 
+  const handleEditClick = (item) => {
+    setEditForm(item);
+  };
+
   useEffect(() => {
     if (!localStorage.getItem("shopkeepertoken")) {
       navigate("/");
@@ -66,12 +70,14 @@ const List = () => {
           {list.map((item, index) => {
             return (
               <div key={index} className="list-table-format">
-                {editForm && <EditForm fetchList={fetchList} item={item} />}
+                {editForm && editForm._id === item._id && (
+                  <EditForm fetchList={fetchList} item={item} />
+                )}
                 <img src={`${url}/images/` + item.image} alt="" />
                 <p>{item.name}</p>
                 <p>{item.category}</p>
                 <p>₹{item.price}</p>
-                <p className="cursor" onClick={() => setEditForm(true)}>
+                <p className="cursor" onClick={() => handleEditClick(item)}>
                   <img
                     className="edit"
                     width="10px"
