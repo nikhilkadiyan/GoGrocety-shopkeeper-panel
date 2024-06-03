@@ -15,6 +15,7 @@ const Add = () => {
     name: "",
     description: "",
     price: "",
+    discount: "",
   });
 
   const [image, setImage] = useState(false);
@@ -25,7 +26,7 @@ const Add = () => {
     formData.append("name", data.name);
     formData.append("description", data.description);
     formData.append("price", Number(data.price));
-    formData.append("category", data.category);
+    formData.append("discount", Number(data.discount));
     formData.append("image", image);
     const response = await axios.post(
       `${url}/api/shopkeeper/addItem`,
@@ -115,6 +116,16 @@ const Add = () => {
             onChange={onChangeHandler}
             value={data.price}
             placeholder="₹25"
+          />
+        </div>
+        <div className="add-price flex-col">
+          <p>Discount</p>
+          <input
+            type="Number"
+            name="discount"
+            onChange={onChangeHandler}
+            value={data.discount}
+            placeholder="2%"
           />
         </div>
 

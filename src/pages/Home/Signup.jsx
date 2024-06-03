@@ -56,6 +56,11 @@ const Signup = () => {
   };
 
   const onChangeHandler = (event) => {
+    if (event.target.name === "contactNo") {
+      if (event.target.value.length > 10) {
+        event.target.value = event.target.value.slice(0, 10);
+      }
+    }
     const name = event.target.name;
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));

@@ -11,7 +11,7 @@ import Home from "./pages/Home/Home";
 import { StoreContext } from "./context/StoreContext";
 
 const App = () => {
-  const { token } = useContext(StoreContext);
+  const { token, editForm } = useContext(StoreContext);
 
   return (
     <div className="app">

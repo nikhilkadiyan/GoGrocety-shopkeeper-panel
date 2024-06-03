@@ -5,6 +5,8 @@ import profile_image from "./profile_image.png";
 import upload_area from "./upload_area.png";
 import parcel_icon from "./parcel_icon.png";
 import logout_icon from "./logout.png";
+import edit_icon from "./edit.png";
+import cross_icon from "./cross_icon.png";
 
 export const assets = {
   logo,
@@ -14,6 +16,8 @@ export const assets = {
   upload_area,
   parcel_icon,
   logout_icon,
+  edit_icon,
+  cross_icon,
 };
 
-export const url = "http://localhost:4000";
+export const url = "https://gogrocery-backend.onrender.com";

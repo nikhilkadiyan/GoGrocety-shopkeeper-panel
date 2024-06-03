@@ -9,12 +9,16 @@ import { StoreContext } from "../../context/StoreContext";
 const Order = () => {
   const navigate = useNavigate();
 
-  const { url, setToken } = useContext(StoreContext);
+  const { url, token, setToken } = useContext(StoreContext);
 
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
-    const response = await axios.get(`${url}/api/order/list`);
+    const response = await axios.get(`${url}/api/order/list`, {
+      headers: {
+        token: `${token}`,
+      },
+    });
     if (response.data.success) {
       setOrders(response.data.data.reverse());
       console.log(response.data.data);
@@ -86,7 +90,7 @@ const Order = () => {
               name=""
               id=""
             >
-              <option value="Food Processing">Food Processing</option>
+              <option value="Packaging">Packaging</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>
             </select>
