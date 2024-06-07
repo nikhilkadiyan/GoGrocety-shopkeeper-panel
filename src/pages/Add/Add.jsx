@@ -43,6 +43,7 @@ const Add = () => {
         name: "",
         description: "",
         price: "",
+        discount: "",
       });
       setImage(false);
     } else {
