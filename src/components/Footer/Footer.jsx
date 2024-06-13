@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="footer-content-right">
           <h2>GET IN TOUCH</h2>
           <ul>
-            <li>+91-212-456-7890</li>
+            <li>+91-7535867740</li>
             <li>contact@gogrocery.com</li>
           </ul>
         </div>
